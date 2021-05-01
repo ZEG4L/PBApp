@@ -3,13 +3,13 @@
 # This file creates a class struct for phonebankers
 # Receive each form submission on slack as an http request and parse information from them
 # TESTING: Currently I am using a json file as simulated input and storing the parsed info in a txt file
-# REQUIRED LIBRARIES: requests, Flask, json
+# This is the part that really would need to be tested for input/output correctness.
 
 import requests
 import json
 
 
-# Struct for Phonebanker
+# This is a class for Phonebanker
 class PBInfo:
     def __init__(self, name: str = "Not Provided", contact: str = "", zip_code: int = 0, languages: str = "", firsttime = True):
         self.name = name
@@ -19,7 +19,7 @@ class PBInfo:
         self.firsttime = firsttime
 
 
-# Parses json file to a struct
+# This function parses the Phonebanker json file to a structure
 def parsing_information(json_filename: str) -> PBInfo:
     with open(json_filename, 'r') as json_file:
         data = json.load(json_file)
@@ -56,6 +56,7 @@ def writing_information(phonebankers: [PBInfo]) -> None:
 # TEST Creates a simulated human json file mimicking the body of Slack response
 # These will be in the body of "view" section of the http payload
 # Reference: https://api.slack.com/reference/interaction-payloads/views
+# This is the json file format that the simulated website will generate. Each format represents a phonebanker's information
 def test_human() -> None:
     human_one = {
         'state': {
