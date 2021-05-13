@@ -7,3 +7,8 @@ https://docs.google.com/spreadsheets/d/1X3b6PcywgeBbGfVY3QVhhcYx_bAa4WGbZBgjQEz3
 #For Testing
 
 Three files are up for testing, PbInfoParse, PbReadSpreadSheet and PbServer Comments are in respective files to help with testing
+#Testing Results and next Iteration
+The functions worked as intented, however there is a paywall for using AWS. We are considering refactoring code to Anvil because its free. 
+Removed requirements: Flask
+Added requirements: Anvil
+Possible 2.0 features: Separation of phone/email, user selected number of callees.
